@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBSalary" Class="MyDCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=DBSalary;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DBSalaryConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.People" Member="People">
+    <Type Name="People">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SalaryDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IdSalary" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PeoplesSalary_People" Member="PeoplesSalary" ThisKey="IdSalary" OtherKey="Id" Type="PeoplesSalary" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PeoplesSalary" Member="PeoplesSalary">
+    <Type Name="PeoplesSalary">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Salary" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="PeoplesSalary_People" Member="People" ThisKey="Id" OtherKey="IdSalary" Type="People" />
+    </Type>
+  </Table>
+</Database>

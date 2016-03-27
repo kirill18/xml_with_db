@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="People">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Person"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Person">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="FIO"/>
+        <xs:element ref="SalaryDate"/>
+        <xs:element ref="Salary"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FIO" type="xs:string">First</xs:element>
+  <xs:element name="SalaryDate" type="xs:dateTime">1.07.2014</xs:element>
+  <xs:element name="Salary" type="xs:double">1000.23</xs:element>
+  <xs:element name="FIO" type="xs:string">Second</xs:element>
+  <xs:element name="SalaryDate" type="xs:dateTime">2.07.2014</xs:element>
+  <xs:element name="Salary" type="xs:double">2000.23</xs:element>
+  <xs:element name="FIO" type="xs:string">Third</xs:element>
+  <xs:element name="SalaryDate" type="xs:dateTime">3.07.2014</xs:element>
+  <xs:element name="Salary" type="xs:double">3000.23</xs:element>
+</xs:schema>
