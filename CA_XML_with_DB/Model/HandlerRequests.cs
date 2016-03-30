@@ -15,13 +15,14 @@ namespace CA_XML_with_DB.Model
     {
         //переопределити эту строку !!!!!
         //от нее зависит работа с БД
+        //другого способа не нашел
         private readonly string connectionString = global::CA_XML_with_DB.Properties.Settings.Default.DBSalaryConnectionString;
         
 
 
         //так как в задание о нем небыло речи , я просто показал что реализовал такую возможность
         //и он работает
-        public DBPeople Show(int number)//этот показывает значение из таблицы
+        public DBPeople ShowById(int number)//show value int table by id
         {
             using (MyWS ws = new MyWS(connectionString))
             {
@@ -31,7 +32,7 @@ namespace CA_XML_with_DB.Model
             }
         }
 
-        public bool AddPersonSalary(string fio, DateTime salaryDate, double salary)//добавление новые значения в таблицу
+        public bool AddPersonSalary(string fio, DateTime salaryDate, double salary)//add new value in table
         {
             if (fio == null | salaryDate == null)
             {
